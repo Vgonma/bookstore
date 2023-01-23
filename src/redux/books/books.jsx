@@ -18,7 +18,7 @@ export default function reducer(state = [], action = {}) {
     }
 
     case REMOVE_BOOK: {
-      return [...state].filter((item) => item !== action.id);
+      return state.filter((item) => item.id !== action.id);
     }
 
     default: return state;
