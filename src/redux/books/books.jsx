@@ -9,11 +9,7 @@ export default function reducer(state = [], action = {}) {
     case ADD_BOOK: {
       return [
         ...state,
-        {
-          title: action.title,
-          author: action.author,
-          id: action.id,
-        },
+        action.book,
       ];
     }
 
@@ -28,17 +24,13 @@ export default function reducer(state = [], action = {}) {
 export function addBook(book) {
   return {
     type: ADD_BOOK,
-    title: book.title,
-    author: book.author,
-    id: book.id,
+    book,
   };
 }
 
 export function removeBook(book) {
   return {
     type: REMOVE_BOOK,
-    title: book.title,
-    author: book.author,
     id: book.id,
   };
 }
