@@ -23,7 +23,7 @@ function Book(props) {
         <p className="book-author">{bookAuthor}</p>
         <ul>
           <button type="button">Comments</button>
-          <button type="button" onClick={(e) => removeHandler(bookId)}>Remove</button>
+          <button type="button" onClick={() => removeHandler(bookId)}>Remove</button>
           <button type="button">Edit</button>
         </ul>
       </div>
