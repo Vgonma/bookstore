@@ -6,22 +6,18 @@ const defaultState = [
   {
     title: 'The Hobbit',
     author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
   },
   {
     title: 'Lord of the Rings: The Fellowship of the Ring',
     author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
   },
   {
     title: 'Lord of the Rings: The Two Towers',
     author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
   },
   {
     title: 'Lord of the Rings: The Return of The King',
     author: 'J.R.R. Tolkien',
-    genre: 'Fantasy',
   },
 ];
 

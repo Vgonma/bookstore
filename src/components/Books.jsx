@@ -10,7 +10,7 @@ export default function Books() {
   return (
     <div>
       {booksList.map((book) => (
-        <Book key={uuidv4()} title={book.title} author={book.author} genre={book.genre} />
+        <Book key={uuidv4()} title={book.title} author={book.author} />
       ))}
       <hr />
       <AddBookForm />
