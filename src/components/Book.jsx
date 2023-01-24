@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function Book(props) {
-  const { title, author } = props;
+  const { title, author, genre } = props;
   const [bookTitle] = useState(title);
   const [bookAuthor] = useState(author);
+  const [bookGenre] = useState(genre);
 
   return (
     <div className="book-container">
       <div className="book-info">
-        <p className="book-genre">Genre</p>
+        <p className="book-genre">{bookGenre}</p>
         <h2 className="book-title">{bookTitle}</h2>
         <p className="book-author">{bookAuthor}</p>
         <ul>
@@ -37,6 +38,7 @@ function Book(props) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired,
 };
 
 export default Book;

@@ -1,3 +1,21 @@
+:root {
+  --pine-tree: #292e1eff;
+  --violet-ryb: #7f0799ff;
+  --dark-orchid: #9649cbff;
+  --maximum-blue-purple: #afbbf2ff;
+  --aero-blue: #d3fff3ff;
+}
+
 * {
   box-sizing: border-box;
+}
+
+.book-container {
+  border: 1px solid var(--pine-tree);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 1rem;
 }

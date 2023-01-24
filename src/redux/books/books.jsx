@@ -2,9 +2,31 @@
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+const defaultState = [
+  {
+    title: 'The Hobbit',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
+  },
+  {
+    title: 'Lord of the Rings: The Fellowship of the Ring',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
+  },
+  {
+    title: 'Lord of the Rings: The Two Towers',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
+  },
+  {
+    title: 'Lord of the Rings: The Return of The King',
+    author: 'J.R.R. Tolkien',
+    genre: 'Fantasy',
+  },
+];
 
 // Reducer
-export default function reducer(state = [], action = {}) {
+export default function reducer(state = defaultState, action = {}) {
   switch (action.type) {
     case ADD_BOOK: {
       return [
