@@ -1,8 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
+// Component imports
 import { useDispatch } from 'react-redux';
-import { addBook, removeBook } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 
 const AddBookForm = (props) => {
   const { title, author } = props;
@@ -12,7 +13,8 @@ const AddBookForm = (props) => {
 
   function validateNewbook() {
     if (!newtitle.trim() || !newAuthor.trim()) return;
-    dispatch(addBook({ title: newtitle, author: newAuthor }));
+    const newBook = { title: newtitle, author: newAuthor, id: uuidv4() };
+    dispatch(addBook(newBook));
     setNewTitle('');
     setNewAuthor('');
   }

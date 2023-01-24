@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 // Actions
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
@@ -6,18 +7,22 @@ const defaultState = [
   {
     title: 'The Hobbit',
     author: 'J.R.R. Tolkien',
+    id: uuidv4(),
   },
   {
     title: 'Lord of the Rings: The Fellowship of the Ring',
     author: 'J.R.R. Tolkien',
+    id: uuidv4(),
   },
   {
     title: 'Lord of the Rings: The Two Towers',
     author: 'J.R.R. Tolkien',
+    id: uuidv4(),
   },
   {
     title: 'Lord of the Rings: The Return of The King',
     author: 'J.R.R. Tolkien',
+    id: uuidv4(),
   },
 ];
 
@@ -46,9 +51,9 @@ export function addBook(book) {
   };
 }
 
-export function removeBook(book) {
+export function removeBook(bookId) {
   return {
     type: REMOVE_BOOK,
-    id: book.id,
+    id: bookId,
   };
 }
