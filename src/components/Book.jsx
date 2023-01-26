@@ -27,12 +27,16 @@ function Book(props) {
           <button type="button">Edit</button>
         </ul>
       </div>
+
       <div className="reading-progress">
+
         <div className="circular-progress-container">
           <div className="circular-progress" />
         </div>
-        <p>64%</p>
-        <p>Completed</p>
+        <div className="cirlce-text-container">
+          <p className="circle-percentage">64%</p>
+          <p className="circle-completed">Completed</p>
+        </div>
         <div className="current-progress-container">
           <p className="current-chapter">Current Chapter</p>
           <p className="current-chapter-number">Chapter 17</p>

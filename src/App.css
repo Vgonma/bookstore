@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800;900&display=swap');
+
 :root {
   --pine-tree: #292e1eff;
   --violet-ryb: #7f0799ff;
@@ -8,6 +10,72 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f3f7;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root {
+  background-color: #fafafa;
+  margin: 2rem;
+  box-shadow: 3px 3px 10px lightgrey, -3px -3px 10px lightgrey;
+}
+
+.header {
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.nav-text-container {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  flex: 1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  font-size: 30px;
+  color: #0290ff;
+}
+
+.navbar {
+  font-size: 13px;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 2rem;
+}
+
+.navbar > a {
+  text-decoration: none;
+  opacity: 0.5;
+  text-transform: uppercase;
+  color: #121212;
+  letter-spacing: 1.9px;
+}
+
+.navbar > a.active {
+  opacity: 1;
+}
+
+.icon-bg {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
 }
 
 .book-container {
@@ -18,4 +86,49 @@
   justify-content: space-between;
   padding: 10px;
   margin: 1rem;
+}
+
+.reading-progress {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+}
+
+.circular-progress-container {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background-color: lightgray;
+}
+
+.circular-progress {
+  width: 112px;
+  height: 112px;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(#0290ff 230deg, lightgrey 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular-progress::before {
+  content: '';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.inside-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: white;
+  background: transparent;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
+  z-index: 100;
 }
