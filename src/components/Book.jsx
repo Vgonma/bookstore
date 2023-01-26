@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 // Component imports
-import { removeBook } from '../redux/books/books';
+import { removeBook } from '../redux/books/booksSlice';
 
 function Book(props) {
-  const { title, author, id } = props;
+  const { title, author, itemId } = props;
   const [bookTitle] = useState(title);
   const [bookAuthor] = useState(author);
-  const [bookId] = useState(id);
+  const [bookId] = useState(itemId);
   const dispatch = useDispatch();
 
   function removeHandler(bookId) {
@@ -46,7 +46,7 @@ function Book(props) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
 };
 
 export default Book;
