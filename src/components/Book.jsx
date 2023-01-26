@@ -22,21 +22,25 @@ function Book(props) {
         <h2 className="book-title">{bookTitle}</h2>
         <p className="book-author">{bookAuthor}</p>
         <ul>
-          <button type="button">Comments</button>
-          <button type="button" onClick={() => removeHandler(bookId)}>Remove</button>
-          <button type="button">Edit</button>
+          <button className="book-action-btn" type="button">Comments</button>
+          <button className="book-action-btn" type="button" onClick={() => removeHandler(bookId)}>Remove</button>
+          <button className="book-action-btn" type="button">Edit</button>
         </ul>
       </div>
+
       <div className="reading-progress">
+
         <div className="circular-progress-container">
           <div className="circular-progress" />
         </div>
-        <p>64%</p>
-        <p>Completed</p>
+        <div className="circle-text-container">
+          <p className="circle-percentage">64%</p>
+          <p className="circle-completed">Completed</p>
+        </div>
         <div className="current-progress-container">
           <p className="current-chapter">Current Chapter</p>
           <p className="current-chapter-number">Chapter 17</p>
-          <button type="button">Update progress</button>
+          <button className="btn" type="button">Update progress</button>
         </div>
       </div>
     </div>

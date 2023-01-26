@@ -8,9 +8,9 @@ export default function Categories() {
   const status = useSelector((state) => state.categories);
 
   return (
-    <div>
-      <h1>{status}</h1>
-      <button type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>
+    <div className="categories-container">
+      <h1 className="categories-title">{status}</h1>
+      <button className="btn" type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>
     </div>
   );
 }
