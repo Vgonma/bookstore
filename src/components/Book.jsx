@@ -40,7 +40,7 @@ function Book(props) {
         <div className="current-progress-container">
           <p className="current-chapter">Current Chapter</p>
           <p className="current-chapter-number">Chapter 17</p>
-          <button className="update-progress-btn" type="button">Update progress</button>
+          <button className="btn" type="button">Update progress</button>
         </div>
       </div>
     </div>

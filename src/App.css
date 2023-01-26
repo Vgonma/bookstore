@@ -23,6 +23,13 @@ img {
   max-width: 100%;
 }
 
+hr {
+  background-color: #e8e8e8;
+  height: 2px;
+  border: none;
+  margin: 2.5rem 0;
+}
+
 #root {
   background-color: #fafafa;
   margin: 2rem;
@@ -85,6 +92,8 @@ img {
   display: grid;
   row-gap: 1rem;
   background: transparent;
+  padding-bottom: 4rem;
+  margin-bottom: 10rem;
 }
 
 .book-container {
@@ -219,7 +228,7 @@ img {
   font-weight: 300;
 }
 
-.update-progress-btn {
+.btn {
   background-color: #0290ff;
   border-radius: 3px;
   border: none;
@@ -233,4 +242,56 @@ img {
   text-transform: uppercase;
   height: 2rem;
   padding: 0 1rem;
+}
+
+.new-book-container {
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.add-book-title {
+  font-size: 20px;
+  color: #121212;
+  opacity: 0.5;
+  font-weight: 700;
+}
+
+.new-book-form {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 2rem;
+}
+
+.form-input {
+  flex: 2;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  height: 3rem;
+  font-size: 1rem;
+  padding: 12px;
+  outline: none;
+  color: #121212;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: capitalize;
+}
+
+.form-input::placeholder {
+  opacity: 0.5;
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid #0290ff;
+}
+
+.form-input:first-child {
+  flex: 3;
+}
+
+.btn--form {
+  height: 3rem;
+  flex: 1;
 }

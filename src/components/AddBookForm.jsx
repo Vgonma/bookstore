@@ -21,10 +21,10 @@ const AddBookForm = (props) => {
 
   return (
     <div className="new-book-container">
-      <h3>ADD NEW BOOK</h3>
+      <h3 className="add-book-title">ADD NEW BOOK</h3>
       <form className="new-book-form">
-        <input type="text" placeholder="Book title" onChange={(e) => setNewTitle(e.target.value)} value={newtitle} />
-        <input type="text" placeholder="Book author" onChange={(e) => setNewAuthor(e.target.value)} value={newAuthor} />
+        <input className="form-input" type="text" placeholder="Book title" onChange={(e) => setNewTitle(e.target.value)} value={newtitle} />
+        <input className="form-input" type="text" placeholder="Book author" onChange={(e) => setNewAuthor(e.target.value)} value={newAuthor} />
         <button
           className="btn btn--form"
           type="button"
