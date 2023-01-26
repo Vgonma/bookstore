@@ -138,6 +138,7 @@ hr {
   font-family: 'Robo Slab', serif;
   padding: 8px;
   border-left: 2px solid #e8e8e8;
+  cursor: pointer;
 }
 
 .book-action-btn:first-child {
