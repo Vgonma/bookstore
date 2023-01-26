@@ -23,12 +23,12 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Project Name] <a name="about-project"></a>
+# 📖 [Bookstore] <a name="about-project"></a>
 
 
 
 
-**[Projec Name]** is a simple react application that lets you use a calculator online.
+**[Bookstore]** is a simple react application that lets you use a calculator online.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -44,8 +44,12 @@
 
 <details>
   <summary>Front End</summary>
+  
   <ul>
     <li><a href="https://reactjs.org/docs/getting-started.html">React</a></li>
+  </ul>
+  <ul>
+    <li><a href="https://redux.js.org/introduction/getting-started">Redux</a></li>
   </ul>
 </details>
 
@@ -94,8 +98,8 @@ Clone this repository to your desired folder:
 
 
 ```cd my-folder   
-    git clone git@github.com:Vgonma/math-magician.git
-    cd leaderboard
+    git clone git@github.com:Vgonma/bookstore.git
+    cd bookstore
 ```
 Install dependencies:
 ```
@@ -106,10 +110,10 @@ Install dependencies:
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run dev`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open the local link returnd to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
@@ -128,10 +132,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Usage
-
-To run the project open the html file in your web browser.
 
 ### Deployment
 
@@ -153,9 +153,9 @@ To run the project open the html file in your web browser.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Feature 1**
-- [ ] **Feature 2**
-- [ ] **Feature 3**
+- [ ] **Book progress**
+- [ ] **Categories**
+- [ ] **User Login**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
