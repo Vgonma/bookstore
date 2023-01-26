@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div className="header">
       <div className="nav-text-container">
-        <h1 className="title">Bookstore CMS</h1>
+        <NavLink className="title" to="/">Bookstore CMS</NavLink>
         <div className="navbar">
           <NavLink to="/">Books</NavLink>
           <NavLink to="Categories">Categories</NavLink>

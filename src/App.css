@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root {
-  --pine-tree: #292e1eff;
-  --violet-ryb: #7f0799ff;
-  --dark-orchid: #9649cbff;
-  --maximum-blue-purple: #afbbf2ff;
-  --aero-blue: #d3fff3ff;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +49,8 @@ hr {
 .title {
   font-size: 30px;
   color: #0290ff;
+  text-decoration: none;
+  font-weight: 700;
 }
 
 .navbar {
@@ -85,6 +79,7 @@ hr {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .booklist-container {
@@ -294,4 +289,17 @@ hr {
 .btn--form {
   height: 3rem;
   flex: 1;
+}
+
+.categories-container {
+  padding: 3rem;
+  display: grid;
+  row-gap: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center;
+}
+
+.categories-container > .btn {
+  max-width: 10rem;
+  margin: auto;
 }
