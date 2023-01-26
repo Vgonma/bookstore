@@ -14,7 +14,7 @@ export default function Books() {
   }, []);
 
   return (
-    <div>
+    <div className="booklist-container">
       {booksList.map((book) => (
         <Book
           key={book.item_id}

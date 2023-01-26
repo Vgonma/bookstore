@@ -22,9 +22,9 @@ function Book(props) {
         <h2 className="book-title">{bookTitle}</h2>
         <p className="book-author">{bookAuthor}</p>
         <ul>
-          <button type="button">Comments</button>
-          <button type="button" onClick={() => removeHandler(bookId)}>Remove</button>
-          <button type="button">Edit</button>
+          <button className="book-action-btn" type="button">Comments</button>
+          <button className="book-action-btn" type="button" onClick={() => removeHandler(bookId)}>Remove</button>
+          <button className="book-action-btn" type="button">Edit</button>
         </ul>
       </div>
 
@@ -33,14 +33,14 @@ function Book(props) {
         <div className="circular-progress-container">
           <div className="circular-progress" />
         </div>
-        <div className="cirlce-text-container">
+        <div className="circle-text-container">
           <p className="circle-percentage">64%</p>
           <p className="circle-completed">Completed</p>
         </div>
         <div className="current-progress-container">
           <p className="current-chapter">Current Chapter</p>
           <p className="current-chapter-number">Chapter 17</p>
-          <button type="button">Update progress</button>
+          <button className="update-progress-btn" type="button">Update progress</button>
         </div>
       </div>
     </div>
