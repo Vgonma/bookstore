@@ -1,27 +1,15 @@
-import { v4 as uuidv4 } from 'uuid';
+// App id: G7owSUVKQ99Rn2lm2aXE
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 // Actions
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 const GET_BOOKS = 'bookstore/books/GET_BOOKS';
-const appid = 'G7owSUVKQ99Rn2lm2aXE';
-const defaultState = [
-  {
-    item1: [
-      {
-        title: "The Handmaid's Tale",
-        category: 'Fiction',
-      },
-    ],
-    item2: [
-      {
-        title: 'Great Expectations',
-        category: 'Classics',
-      },
-    ],
-  },
-];
+const defaultState = [{
+  books: [],
+  loading: false,
+}];
 
 // Reducer
 export default function reducer(state = defaultState, action = {}) {
@@ -35,11 +23,11 @@ export default function reducer(state = defaultState, action = {}) {
     }
 
     case `${GET_BOOKS}/pending`: {
-      return ['loading'];
+      return [...state, action.payload];
     }
 
     case `${GET_BOOKS}/fulfilled`: {
-      return action.payload;
+      return [...state, action.payload];
     }
 
     default:
@@ -47,12 +35,29 @@ export default function reducer(state = defaultState, action = {}) {
   }
 }
 
-export function addBook(book) {
-  return {
-    type: ADD_BOOK,
-    book,
-  };
-}
+export const getData = createAsyncThunk(
+  'bookstore/books/GET_BOOKS',
+  async () => (
+    fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/G7owSUVKQ99Rn2lm2aXE/books').then((res) => res.json())
+  ),
+);
+
+export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/G7owSUVKQ99Rn2lm2aXE/books',
+  {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: `${book.id}`,
+      title: book.title,
+      author: book.author,
+      category: 'Fiction',
+    }),
+  }).then((res) => {
+  res.json();
+  return book;
+}));
 
 export function removeBook(bookId) {
   return {
@@ -60,11 +65,3 @@ export function removeBook(bookId) {
     id: bookId,
   };
 }
-
-export const getData = createAsyncThunk(GET_BOOKS, async () => {
-  const prom = await fetch(
-    'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/G7owSUVKQ99Rn2lm2aXE/books',
-  );
-  const data = await prom.json();
-  return data;
-});

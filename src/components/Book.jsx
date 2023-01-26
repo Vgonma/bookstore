@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 // Component imports
-import { removeBook } from '../redux/books/books';
+import { removeBook } from '../redux/books/booksSlice';
 
 function Book(props) {
-  const { title, author, id } = props;
+  // eslint-disable-next-line camelcase
+  const { title, author, item_id } = props;
   const [bookTitle] = useState(title);
   const [bookAuthor] = useState(author);
-  const [bookId] = useState(id);
+  const [bookId] = useState(item_id);
   const dispatch = useDispatch();
 
   function removeHandler(bookId) {
@@ -46,7 +47,7 @@ function Book(props) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
 };
 
 export default Book;

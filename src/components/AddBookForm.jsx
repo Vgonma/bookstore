@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 // Component imports
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook } from '../redux/books/booksSlice';
 
 const AddBookForm = (props) => {
   const { title, author } = props;
@@ -13,7 +13,7 @@ const AddBookForm = (props) => {
 
   function validateNewbook() {
     if (!newtitle.trim() || !newAuthor.trim()) return;
-    const newBook = { title: newtitle, author: newAuthor, id: uuidv4() };
+    const newBook = { title: newtitle, author: newAuthor, item_id: uuidv4() };
     dispatch(addBook(newBook));
     setNewTitle('');
     setNewAuthor('');

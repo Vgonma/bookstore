@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 // Component imports
 import Book from './Book';
 import AddBookForm from './AddBookForm';
-import { getData } from '../redux/books/books';
+import { getData } from '../redux/books/booksSlice';
 
 export default function Books() {
-  const booksList = useSelector((state) => Object.entries(state.slice.books));
+  const booksList = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
 
-  booksList.forEach((book) => console.log(book));
   useEffect(() => {
     dispatch(getData());
   }, []);
@@ -17,7 +16,12 @@ export default function Books() {
   return (
     <div>
       {booksList.map((book) => (
-        <Book key={book[0]} id={book[0]} title={book[1][0].title} author={book[1][0].author} />
+        <Book
+          key={book.item_id}
+          item_id={book.item_id}
+          title={book.title}
+          author={book.author}
+        />
       ))}
       <hr />
       <AddBookForm />
