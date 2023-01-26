@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // Component imports
@@ -19,7 +18,7 @@ export default function Books() {
       {booksList.map((book) => (
         <Book
           key={book.item_id}
-          item_id={book.item_id}
+          itemId={book.item_id}
           title={book.title}
           author={book.author}
         />

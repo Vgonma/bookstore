@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const ADD_BOOK = 'bookstore/books/ADD_BOOK';
@@ -23,7 +21,7 @@ export const addBook = createAsyncThunk(ADD_BOOK, async (book) => fetch(
       category: 'Fiction',
     }),
   },
-).then((res) => {
+).then(() => {
   const newbook = {
     ...book, key: book.id,
   };
@@ -41,7 +39,7 @@ export const removeBook = createAsyncThunk(REMOVE_BOOK, async (id) => fetch(
       item_id: `${id}`,
     }),
   },
-).then((res) => id));
+).then(() => id));
 
 const dataSlice = createSlice({
   name: 'data',
@@ -51,30 +49,35 @@ const dataSlice = createSlice({
   },
   extraReducers: {
     [getData.pending]: (state) => {
-      state.loading = true;
+      const currentState = state;
+      currentState.loading = true;
     },
     [getData.fulfilled]: (state, action) => {
-      state.loading = false;
+      const currentState = state;
+      currentState.loading = false;
       const data = action.payload;
       const books = Object.keys(data).map((key) => ({
         item_id: key,
         ...data[key][0],
       }));
-      state.books = books;
+      currentState.books = books;
     },
     [getData.rejected]: (state) => {
-      state.loading = false;
+      const currentState = state;
+      currentState.loading = false;
     },
     [addBook.fulfilled]: (state, action) => {
+      const currentState = state;
       const newBook = {
         ...action.payload,
         category: 'Fiction',
       };
-      state.books = [...state.books, newBook];
+      currentState.books = [...state.books, newBook];
     },
     [removeBook.fulfilled]: (state, { payload }) => {
+      const currentState = state;
       const arr = state.books.filter((item) => item.item_id !== payload);
-      state.books = arr;
+      currentState.books = arr;
     },
   },
 });

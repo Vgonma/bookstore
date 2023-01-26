@@ -5,11 +5,10 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/booksSlice';
 
 function Book(props) {
-  // eslint-disable-next-line camelcase
-  const { title, author, item_id } = props;
+  const { title, author, itemId } = props;
   const [bookTitle] = useState(title);
   const [bookAuthor] = useState(author);
-  const [bookId] = useState(item_id);
+  const [bookId] = useState(itemId);
   const dispatch = useDispatch();
 
   function removeHandler(bookId) {
@@ -47,7 +46,7 @@ function Book(props) {
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  item_id: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
 };
 
 export default Book;
